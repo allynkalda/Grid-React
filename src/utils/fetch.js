@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-function useFetch(url) {
+const header = {
+  "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+  "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS 
+}
+
+function useFetch(url, header) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
