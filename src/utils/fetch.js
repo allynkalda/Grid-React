@@ -1,17 +1,12 @@
 import { useState, useEffect } from "react";
 
-const header = {
-  "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-  "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS 
-}
-
-function useFetch(url, header) {
+function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true)
-    fetch(url)
+    fetch('https://cors-anywhere.herokuapp.com/' + url)
         .then(j => j.json())
         .then(data => {
             setData(data);
