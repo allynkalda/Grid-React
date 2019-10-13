@@ -58,14 +58,29 @@ table, th, td {
 table tr:nth-child(even) {
   background-color: #eee;
 }
+
 table tr:nth-child(odd) {
   background-color: #fff;
 }
+
 table th {
   color: white;
   background-color: #666;
 }
 
 th, td {
-  padding: 8px;
+  padding: 7px;
+}
+
+button {
+  width:100%;
+  display:block;
+  box-shadow: 0 0 10px 0px #ccc;
+  border: none;
+  background: oldlace;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: rgb(250, 250, 167);
 }
