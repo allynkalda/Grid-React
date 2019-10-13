@@ -1,28 +1,28 @@
 import React from 'react';
 import Row from './Row';
 
-
 function Header(props) {
-    const { data } = props;
-    const items = data && data.assets ? Object.keys(data.assets[0]) : null;
-    console.log(items)
+    const { headers, body, showButton, rowClick } = props;
     return (
         <table>
             <thead>
             <tr>
-                {items ? items.map( (item, index) => {
+                {headers ? headers.map( (item, index) => {
                     return (
                         <th key={index}>{item}</th>
                     )
                 }) : null
                 }
+                {
+                    showButton ? <th>Entities</th> : null
+                } 
             </tr>
             </thead>
             <tbody>
                 {
-                    data && data.assets ? data.assets.map((item, index) => {
+                    body ? body.map((item, index) => {
                         return (
-                            <Row item={item}></Row>
+                            <Row rowClick={rowClick} key={index} showButton={showButton} item={item}></Row>
                         )
                     }) : null
                 }

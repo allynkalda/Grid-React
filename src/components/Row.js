@@ -1,17 +1,23 @@
-import React from 'react'
+import React from 'react';
+import Button from './Button';
 
 function Row(props) {
-    const { item } = props;
+
+    const { item, showButton, rowClick } = props;
     const eachItem = item ? Object.values(item) : null;
+    
     return (
-        <tr>
+        <tr onContextMenu={() => rowClick(item.id)}>
             {   
                 eachItem ?
                 eachItem.map((item, index) => {
                     return (
-                        <td>{item}</td>
+                        <td key={index}>{item}</td>
                     )
                 }) : null
+            }
+            {
+                showButton ? <td><Button></Button></td> : null
             }
         </tr>
     )
