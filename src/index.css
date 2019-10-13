@@ -32,3 +32,40 @@ ul {
   border-left: 4px solid #666;
 }
 
+.loader {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.loader-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+table {
+  width:100%
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+  background-color: #fff;
+}
+table th {
+  color: white;
+  background-color: #666;
+}
+
+th, td {
+  padding: 8px;
+}
