@@ -21,9 +21,9 @@ function Header(props) {
             <tbody>
                 {
                     body ? body.map((item, index) => {
-                        return (
-                            <Row rowClick={rowClick} id={item.id} key={index} showButton={showButton} item={item}></Row>
-                        )
+                            return (
+                            <Row rowClick={rowClick} id={item.id} key={index} showButton={showButton} item={item} ></Row>
+                            )
                     }) : null
                 }
             </tbody>

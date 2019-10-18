@@ -37,8 +37,7 @@ function Entities(props) {
                 width={100}
              /></div> :
             <ContextMenu id={id}>
-                <Header 
-                headers={headers} body={body} showButton={showButton}></Header>
+                <Header headers={headers} body={body} showButton={showButton}></Header>
             </ContextMenu>
             } 
         

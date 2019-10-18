@@ -7,7 +7,7 @@ function Row(props) {
     const eachItem = item ? Object.values(item) : null;
     
     return (
-        <tr>
+        <tr className={`row-${id}`}>
             {   
                 eachItem ?
                 eachItem.map((item, index) => {
