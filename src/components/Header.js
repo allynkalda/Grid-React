@@ -22,7 +22,7 @@ function Header(props) {
                 {
                     body ? body.map((item, index) => {
                         return (
-                            <Row rowClick={rowClick} key={index} showButton={showButton} item={item}></Row>
+                            <Row rowClick={rowClick} id={item.id} key={index} showButton={showButton} item={item}></Row>
                         )
                     }) : null
                 }

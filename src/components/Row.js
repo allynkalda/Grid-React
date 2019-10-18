@@ -3,11 +3,11 @@ import Button from './Button';
 
 function Row(props) {
 
-    const { item, showButton, rowClick } = props;
+    const { item, showButton, id } = props;
     const eachItem = item ? Object.values(item) : null;
     
     return (
-        <tr onContextMenu={() => rowClick(item.id)}>
+        <tr>
             {   
                 eachItem ?
                 eachItem.map((item, index) => {
@@ -17,7 +17,7 @@ function Row(props) {
                 }) : null
             }
             {
-                showButton ? <td id="button-td"><Button></Button></td> : null
+                showButton ? <td id="button-td"><Button id={id}></Button></td> : null
             }
         </tr>
     )

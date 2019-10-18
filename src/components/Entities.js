@@ -7,17 +7,23 @@ import ContextMenu from './ContextMenu';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"; 
 import Loader from 'react-loader-spinner';
 
-function Entities() {
+function Entities(props) {
 
-    const [ id, setId ] = useState(null);
-    const data = useFetch(entitiesUrl);
-    const loading = data[1];
-    const headers = data && data[0] ? Object.keys(data[0].entities[0]) : null;
-    const body = data && data[0] ? data[0].entities : null;
+   // const [ id, setId ] = useState(null);
+    const [ data, loading ] = useFetch(entitiesUrl);
+    const id = props.match.params.id
+
+    console.log(id)
+    
+    const body = data && data.entities ? data.entities.filter( item => item.id_asset == id) : null
+    const headers = body ? Object.keys(body[0]) : null;
+    console.log(body)
     const showButton = false;
-    const rowClick = (item) => {
-        setId(item)
-    }
+    // const rowClick = (item) => {
+    //     setId(item)
+    // }
+
+    console.log('entities', data)
 
     return (
         <div>
@@ -31,10 +37,12 @@ function Entities() {
                 width={100}
              /></div> :
             <ContextMenu id={id}>
-                <Header rowClick={rowClick}
+                <Header 
                 headers={headers} body={body} showButton={showButton}></Header>
             </ContextMenu>
-            }
+            } 
+        
+
         </div>
     )
 }

@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path={['/', '/assets']} component={Assets}></Route>
-        <Route path ={'/entities'} component={Entities}></Route>
+        <Route path ={'/entities/:id'} component={Entities}></Route>
       </Switch>
     </div>
   );
