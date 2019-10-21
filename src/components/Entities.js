@@ -9,21 +9,11 @@ import Loader from 'react-loader-spinner';
 
 function Entities(props) {
 
-   // const [ id, setId ] = useState(null);
     const [ data, loading ] = useFetch(entitiesUrl);
-    const id = props.match.params.id
-
-    console.log(id)
-    
+    const id = props.match.params.id;
     const body = data && data.entities ? data.entities.filter( item => item.id_asset == id) : null
     const headers = body ? Object.keys(body[0]) : null;
-    console.log(body)
     const showButton = false;
-    // const rowClick = (item) => {
-    //     setId(item)
-    // }
-
-    console.log('entities', data)
 
     return (
         <div>
