@@ -8,7 +8,6 @@ import Loader from 'react-loader-spinner';
 export default function Assets() {
 
 const [ data, loading ] = useFetch(assetsUrl)
-console.log('assets', data)
 const headers = data && data.assets ? Object.keys(data.assets[0]) : null;
 const body = data && data.assets ? data.assets : null;
 const showButton = true;
